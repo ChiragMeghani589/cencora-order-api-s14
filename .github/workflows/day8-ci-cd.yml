@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       deploy_to_qa:
-        description: Deploy to QA after build?
+        description: "Deploy to QA after build?"
         required: true
         type: boolean
         default: false
@@ -26,12 +26,12 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ ChiragMeghani589/cencora-order-api-s14 }}
+  IMAGE_NAME: ChiragMeghani589/cencora-order-api-s14
   PYTHON_VERSION: "3.12"
 
 jobs:
   build:
-    name: Build and test
+    name: Build and Test
     runs-on: ubuntu-latest
 
     steps:
@@ -53,7 +53,7 @@ jobs:
           python -m py_compile app/main.py
 
   docker_build_push:
-    name: Build and push image to GHCR
+    name: Build and Push Image to GHCR
     needs: build
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
