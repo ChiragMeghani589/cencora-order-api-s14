@@ -26,7 +26,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: ${{ cencora-order-api-s14 }}
   PYTHON_VERSION: "3.12"
 
 jobs:
